@@ -18,5 +18,9 @@ connectToDatabase()
 app.use(express.json());
 app.use(cors());
 
+app.get("/health", () => {
+  res.status(200).json({ message: "Health OK !" });
+});
+
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/account", accountRouter);
