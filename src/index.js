@@ -18,7 +18,7 @@ connectToDatabase()
 app.use(express.json());
 app.use(cors());
 
-app.get("/health", () => {
+app.get("/health", (req, res) => {
   res.status(200).json({ message: "Health OK !" });
 });
 
